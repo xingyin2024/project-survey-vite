@@ -1,3 +1,4 @@
+import "./Questions.css"
 /**
  * OBS! The content of this component needs to be update! This is just an example from Diego's Technigo-useStateClass! 
  ** /
@@ -17,16 +18,30 @@ export const Age = ({ updateFormData, value }) => {
   };
 
   return (
-    <div className="border-box">
-      {/* Label for the age input field */}
-      <label>Age:</label>
+    <div className="border-box-qa">
+     
+      <p className="qa-label">
+        <div className="center-content-qa">
+          <p>1.</p>
+          <label for="number">Age:</label>
+        </div>
+      </p>
+      
+      <p className="qa-input">
+        <div className="center-content-qa">
+          <input placeholder="Answer" type="number" value={value} onChange= {handleAgeChange} />
+          <button className="button-qa">Next question</button>
+        </div>
+      </p>
 
-      {/* Input field to capture the user's age, with the value controlled by the "value" prop */}
-      {/* The onChange event triggers the handleAgeChange function to update the form data */}
-      <input type="number" value={value} onChange={handleAgeChange} />
     </div>
   );
 };
+
+
+/*label for age input */
+/* Input field to capture the user's age, with the value controlled by the "value" prop */
+/* The onChange event triggers the handleAgeChange function to update the form data */
 
 /**
  * Summary:

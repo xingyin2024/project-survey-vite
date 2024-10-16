@@ -12,13 +12,13 @@
 
 
 import { Welcome } from "./Welcome";
-/*import { Q1 } from "./Q1";
-import { Q2 } from "./Q2";
+import { Age } from "./Q1.jsx"
+/* import { Q2 } from "./Q2";
 import { Q3 } from "./Q3";
 import { Q4 } from "./Q4";
 import { Q5 } from "./Q5";
 import { Q6 } from "./Q6";
-import { useState } from "react";*/
+import { useState } from "react"; */
 
 
 // Component: MultiStepForm
@@ -30,28 +30,21 @@ export const MultiStepForm = () => {
     <h1>this is h1 text</h1>
     <h2>this is h2 text</h2>
     <p>this is p text</p>
+
+    <Age />
   </div>
   )
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 }
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 
 

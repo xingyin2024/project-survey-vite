@@ -9,6 +9,9 @@
  * This file helps students understand how controlled components work and how to pass down state and functions between components in React.
  */
 
+import "./Questions.css"
+
+
 export const Age = ({ updateFormData, value }) => {
   // Function to handle user input and update the form's age field
   const handleAgeChange = (e) => {
@@ -17,13 +20,26 @@ export const Age = ({ updateFormData, value }) => {
   };
 
   return (
-    <div className="border-box">
-      {/* Label for the age input field */}
-      <label>Age:</label>
+    <div className="border-box-qa">
 
-      {/* Input field to capture the user's age, with the value controlled by the "value" prop */}
-      {/* The onChange event triggers the handleAgeChange function to update the form data */}
-      <input type="number" value={value} onChange={handleAgeChange} />
+      <p className="qa-label">
+        <div className="center-content-qa">
+          <p>2.</p>
+
+          <label for="number">Age:</label>
+
+        </div>
+      </p>
+      
+      <p className="qa-input">
+        <div className="center-content-qa">
+
+          <input placeholder="Answer" type="number" value={value} onChange= {handleAgeChange} />
+          
+          <button className="button-qa">Next question</button>
+        </div>
+      </p>
+
     </div>
   );
 };

@@ -1,0 +1,29 @@
+.header-welcome-form {
+    height: 100vh;
+    overflow: hidden;
+    background-color: #0018A4;
+    color: white;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding:1rem; */
+}
+.center-content-header {
+    height: 50%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.button-header {
+    padding: 10px 20px;
+    color: #0018A4;
+    font-weight: 600;
+    border-radius: 6px;
+    background-color: #fff;
+    border: none;
+}
