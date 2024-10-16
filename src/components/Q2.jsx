@@ -9,11 +9,11 @@
  * This file helps students understand how controlled components work and how to pass down state and functions between components in React.
  */
 
-export const Age = ({ updateFormData, value }) => {
+export const SeasonPreference = ({ updateFormData, value }) => {
   // Function to handle user input and update the form's age field
-  const handleAgeChange = (e) => {
+  const handleSeasonChange = (e) => {
     // Call updateFormData to update the "age" field with the input's current value
-    updateFormData("age", e.target.value);
+    updateFormData("seasonPreference", e.target.value);
   };
 
   return (
@@ -23,7 +23,7 @@ export const Age = ({ updateFormData, value }) => {
 
       {/* Input field to capture the user's age, with the value controlled by the "value" prop */}
       {/* The onChange event triggers the handleAgeChange function to update the form data */}
-      <input type="number" value={value} onChange={handleAgeChange} />
+      <input type="number" value={value} onChange={handleSeasonChange} />
     </div>
   );
 };

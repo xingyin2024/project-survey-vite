@@ -1,35 +1,63 @@
-/**
- * OBS! The content of this component needs to be update! This is just an example from Diego's Technigo-useStateClass! 
- ** /
- 
  /**
- * This component is used to collect and update the user's age in a multi-step form.
- * It demonstrates how to handle form inputs in React using the useState hook indirectly (from a parent component).
- * The Age component receives the current age value and an update function as props, and updates the form data whenever the user inputs a number.
- * This file helps students understand how controlled components work and how to pass down state and functions between components in React.
+ * This component is used to collect and update the user's pet preference in a multi-step form.
+ * The selected option is stored in formData.petPreference. 
+ * It demonstrates how to handle input type Radio in React using the useState hook indirectly (from a parent component).
+ * The PetPreference component receives the current petPreference value and an update function as props, 
+ * and updates the form data using radio buttons to let the user choose between "Dog" and "Cat."
+ * Each radio button is associated with a unique id and has proper labels for accessibility.
+ * Both radio buttons use the same name ("petPreference"), which groups them together, 
+ * ensuring only one radio button can be selected at a time.
  */
 
-export const Age = ({ updateFormData, value }) => {
-  // Function to handle user input and update the form's age field
-  const handleAgeChange = (e) => {
-    // Call updateFormData to update the "age" field with the input's current value
-    updateFormData("age", e.target.value);
+export const PetPreference = ({ updateFormData, value }) => {
+  // Function to handle user input and update the form's petPreference field
+  const handlePetChange = (e) => {
+    // Call updateFormData to update the "petPreference" field with the input's current value
+    updateFormData("petPreference", e.target.value);
   };
 
   return (
-    <div className="border-box">
-      {/* Label for the age input field */}
-      <label>Age:</label>
+    <div className="flex-container">
+      <h3>Are you a dog or a cat person?</h3>
+      
+      <form>
+        {/* Radio button for Dog */}
+        <label htmlFor="dog">
+          <input
+          type="radio"
+          // name="petPreference"
+          id="dog"
+          value="dog"
+          checked={value === "dog"}
+          onChange={handlePetChange}
+        />
+          Dog
+        </label>
 
-      {/* Input field to capture the user's age, with the value controlled by the "value" prop */}
-      {/* The onChange event triggers the handleAgeChange function to update the form data */}
-      <input type="number" value={value} onChange={handleAgeChange} />
+        <label htmlFor="cat">
+          <input
+          type="radio"
+          // name="petPreference"
+          id="cat"
+          value="cat"
+          checked={value === "cat"}
+          onChange={handlePetChange}
+        />
+          Cat
+        </label>
+
+        <label htmlFor="none">
+          <input
+          type="radio"
+          // name="petPreference"
+          id="none"
+          value="none"
+          checked={value === "none"}
+          onChange={handlePetChange}
+        />
+          Neither
+        </label>
+      </form>         
     </div>
   );
 };
-
-/**
- * Summary:
- * This component provides an input field for the user's age and updates the form state through the handleAgeChange function as the user types.
- * The component receives both the current age value and the update function as props, making it a good example of controlled inputs and props usage in React.
- */
