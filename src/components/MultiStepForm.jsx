@@ -38,8 +38,8 @@ export const MultiStepForm = () => {
   // State to track whether the form has been submitted
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  // State to track the current step (1 through 6)
-  const [currentStep, setCurrentStep] = useState(1);
+  // State to track the current step (0 for welcome screen and 1-6 for questions)
+  const [currentStep, setCurrentStep] = useState(0);
   
   // ---
   // ---
@@ -48,6 +48,12 @@ export const MultiStepForm = () => {
   const updateFormData = (field, value) => {
     setFormData((previous) => ({ ...previous, [field]: value }));
   };
+  
+  // Function to move to the first step in the form
+  const startForm = () => {
+    setCurrentStep(1); // Set current step to 1 when the form starts
+  };
+
 
   // Function to determine personality type based on the slider value
   const getPersonalityType = (value) => {
@@ -136,7 +142,7 @@ export const MultiStepForm = () => {
       favoriteArtist: "", /***OBS! this part needs to be updated!  ***/
     });
     setFormSubmitted(false);
-    setCurrentStep(1);
+    setCurrentStep(0);
   };
 
   // ---
@@ -145,9 +151,9 @@ export const MultiStepForm = () => {
   return (
     <div>
       {formSubmitted ? (
-        <h2>Thanks for taking the survey!</h2>
+        <h1>Thanks for taking the survey!</h1>
       ) : (
-              <Welcome />
+        currentStep === 0 && <Welcome startForm={startForm} />
       )}
 
       {currentStep === 1 && (
@@ -175,7 +181,7 @@ export const MultiStepForm = () => {
       )}
 
       {/* Navigation buttons for moving between steps */}
-      {!formSubmitted && (
+      {!formSubmitted && currentStep > 0 && (
         <div className="cta-box?">
           {currentStep > 1 && <button onClick={prevStep}>Previous</button>}
           {currentStep < 6 ? (
@@ -189,7 +195,7 @@ export const MultiStepForm = () => {
       {/* Display the form data after submission */}
       {formSubmitted && (
         <div className="flex-container?">
-          <h1>Results</h1>
+          <h2>Results</h2>
           <hr />
           <p>You prefer {formData.petPreference}</p>
           <p>You favorite season is {formData.seasonPreference}</p>

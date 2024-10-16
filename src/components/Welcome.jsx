@@ -5,9 +5,8 @@ import "./Welcome.css"
  **/
 
 
-export const Welcome = ({ }) => {
+export const Welcome = ({ startForm }) => {
   console.log("Welcome ok")
-  const startForm = () => {  }
 
   return (
     <>
