@@ -29,7 +29,7 @@ export const MultiStepForm = () => {
   const [formData, setFormData] = useState({
     petPreference: "",
     seasonPreference: "",
-    personality: 50,
+    personality: "",
     age: "", /***OBS! this part needs to be updated!  ***/
     favoriteAlbum: "", /***OBS! this part needs to be updated!  ***/
     favoriteArtist: "", /***OBS! this part needs to be updated!  ***/
@@ -191,14 +191,14 @@ export const MultiStepForm = () => {
         <div className="flex-container?">
           <h1>Results</h1>
           <hr />
-          <p>You are a ${formData.petPreference} person</p>
-          <p>You favorite season is ${formData.seasonPreference}</p>
-          <p>And you think ${getPersonalityType(formData.personality)}</p>
+          <p>You prefer {formData.petPreference}</p>
+          <p>You favorite season is {formData.seasonPreference}</p>
+          <p>And you think {getPersonalityType(formData.personality)}</p>
           <p>How fun it is! Same like me 🌞 </p>
           {/***OBS! this part below needs to be updated!  ***/}
-          <p>Age: ${formData.age}</p>
-          <p>Favorite Album: ${formData.favoriteAlbum}</p>
-          <p>Favorite Artist: ${formData.favoriteArtist}</p>
+          <p>Age: {formData.age}</p>
+          <p>Favorite Album: {formData.favoriteAlbum}</p>
+          <p>Favorite Artist: {formData.favoriteArtist}</p>
           <hr />
           <h2>Hope you enjoy the survey ❤️❤️❤️</h2>
           <button onClick={startOver}>Start Over</button>
@@ -210,11 +210,3 @@ export const MultiStepForm = () => {
   );
 
 };
-
-/**
- * Summary:
- * This multi-step form demonstrates how to manage complex form data across multiple steps with React's useState hook.
- * It validates input at each step and conditionally renders different components based on the current step.
- * The form collects user information and, upon submission, displays the data. The user can reset the form and start over.
- * This component is useful for teaching how to manage multi-step forms, form validation, and state management.
- */
