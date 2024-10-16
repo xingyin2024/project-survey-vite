@@ -9,9 +9,11 @@
  * Once submitted, the form data is displayed, and the user can choose to reset the form and start over.
  * This component demonstrates step-by-step form handling with React state management.
  */
-import "./Questions.css";
-import { useState } from "react";
 
+import { useState } from "react";
+import "./Questions.css";
+
+import { Welcome } from "./Welcome";
 import { PetPreference } from "./Q1";
 import { SeasonPreference } from "./Q2";
 import { Personality } from "./Q3";
@@ -145,7 +147,7 @@ export const MultiStepForm = () => {
       {formSubmitted ? (
         <h2>Thanks for taking the survey!</h2>
       ) : (
-        <h2>Can you see me somewhere? 😊</h2>  /***OBS! this part needs to be updated!  ***/
+              <Welcome />
       )}
 
       {currentStep === 1 && (
