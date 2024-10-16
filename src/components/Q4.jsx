@@ -26,7 +26,7 @@ export const Age = ({ updateFormData, value }) => {
         <div className="center-content-qa">
           <p>2.</p>
 
-          <label for="number">Age:</label>
+          <label htmlFor="number">Age:</label>
 
         </div>
       </p>

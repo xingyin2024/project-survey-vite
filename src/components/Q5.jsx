@@ -1,51 +1,40 @@
 /**
- * OBS! The content of this component needs to be update! This is just an example from Diego's Technigo-useStateClass! 
- ** /
- 
- /**
- * This component is used to collect and update the user's age in a multi-step form.
- * It demonstrates how to handle form inputs in React using the useState hook indirectly (from a parent component).
- * The Age component receives the current age value and an update function as props, and updates the form data whenever the user inputs a number.
- * This file helps students understand how controlled components work and how to pass down state and functions between components in React.
+ * This component is used to collect and update the user's favorite album in a multi-step form.
+ * It demonstrates how to handle select dropdowns in React using the useState hook indirectly (from a parent component).
+ * The Album component receives the current favorite album value and an update function as props, and updates the form data when the user selects an album.
+ * This file helps students understand how to manage dropdowns and controlled components using props in React.
  */
 
  import "./Questions.css"
 
-
-export const Age = ({ updateFormData, value }) => {
-  // Function to handle user input and update the form's age field
-  const handleAgeChange = (e) => {
-    // Call updateFormData to update the "age" field with the input's current value
-    updateFormData("age", e.target.value);
+ export const Album = ({ updateFormData, value }) => {
+  // Function to handle the user's selection and update the form's favoriteAlbum field
+  const handleFavoriteAlbumChange = (e) => {
+    // Call updateFormData to update the "favoriteAlbum" field with the selected value
+    updateFormData("favoriteAlbum", e.target.value);
   };
 
   return (
     <div className="border-box-qa">
+      {/* Label for the favorite album dropdown */}
+      <label className="qa-label">Favorite Album:</label>
 
-      <p className="qa-label">
-        <div className="center-content-qa">
-          <p>2.</p>
-
-          <label for="number">Age:</label>
-
-        </div>
-      </p>
-      
-      <p className="qa-input">
-        <div className="center-content-qa">
-
-          <input placeholder="Answer" type="number" value={value} onChange= {handleAgeChange} />
-          
-          <button className="button-qa">Next question</button>
-        </div>
-      </p>
-
+      {/* Dropdown to select the user's favorite album, controlled by the "value" prop */}
+      {/* The onChange event triggers the handleFavoriteAlbumChange function to update the form data */}
+      <select className="center-content-qa" value={value} onChange={handleFavoriteAlbumChange}>
+        <option value="">Select an Album</option>
+        <option value="taylor-swift-midnights">Taylor Swift - Midnights</option>
+        <option value="beyonce-renaissance">Beyonce - Renaissance</option>
+        <option value="kid-cudi-motm">Kid Cudi - Man On The Moon</option>
+        <option value="sza-sos">SZA - SOS</option>
+      </select>
     </div>
   );
 };
 
 /**
  * Summary:
- * This component provides an input field for the user's age and updates the form state through the handleAgeChange function as the user types.
- * The component receives both the current age value and the update function as props, making it a good example of controlled inputs and props usage in React.
+ * This component provides a dropdown for selecting the user's favorite album and updates the form state when a selection is made.
+ * The component demonstrates how to handle select inputs in React, using controlled components where the dropdown value is managed by the parent component's state.
+ * It also shows how to pass values and functions between components using props, making it a practical example of controlled form handling in React.
  */

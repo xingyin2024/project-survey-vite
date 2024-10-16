@@ -6,13 +6,16 @@ import "./Welcome.css"
 
 
 export const Welcome = () => {
+  console.log("Welcome ok")
+  const toStart = () => {  }
+
   return (
     <>
       <header className="header-welcome-form">
         <div className="center-content-header">
           <h1>The Science of Happiness</h1>
           <h2>Everday Joy Bossters Survey</h2>
-          <button className="button-header">Let us go!</button>
+          <button className="button-header" onClick={toStart}>Let us go!</button>
         </div>
       </header>
     </>
