@@ -88,7 +88,7 @@ export const MultiStepForm = () => {
         
         case 3: /***OBS! this part needs to be updated!  ***/
           if (formData.personality.trim() !== "") setCurrentStep(currentStep + 1);
-          else alert("Please rate your personality between 1 to 10");
+          else alert("Please rate your personality between 1 to 100");
           break;
         
         case 4: /***OBS! this part needs to be updated!  ***/

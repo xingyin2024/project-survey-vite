@@ -21,7 +21,7 @@ export const Personality = ({ updateFormData, value }) => {
       
       <div className="qa-input">
         <label htmlFor="personality">
-          Extrovert
+          Totally <b>Extrovert</b> 😁
           <input
             type="range"
             id="personality"
@@ -30,8 +30,9 @@ export const Personality = ({ updateFormData, value }) => {
             value={value}
             onChange={handlePersonalityChange}          
           />
-          Introvert
+          Maybe <b>Introvert</b> 😉
         </label>
+        <br />
         <p>Current value: {value}</p>
       </div>
     </div>
