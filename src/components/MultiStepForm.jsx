@@ -17,9 +17,11 @@ import { Welcome } from "./Welcome";
 import { PetPreference } from "./Q1";
 import { SeasonPreference } from "./Q2";
 import { Personality } from "./Q3";
-import { Age } from "./Q4"; /***OBS! this part needs to be updated!  ***/
-import { Album } from "./Q5"; /***OBS! this part needs to be updated!  ***/ 
+import { TimePreference } from "./Q4";
+import { FavoriteMusic } from "./Q5"; 
 import { Artist } from "./Q6"; /***OBS! this part needs to be updated!  ***/ 
+
+
 
 // Component: MultiStepForm
 export const MultiStepForm = () => {
@@ -30,8 +32,8 @@ export const MultiStepForm = () => {
     petPreference: "",
     seasonPreference: "",
     personality: "",
-    age: "", /***OBS! this part needs to be updated!  ***/
-    favoriteAlbum: "", /***OBS! this part needs to be updated!  ***/
+    timePreference: "",
+    favoriteMusic: "", /***OBS! this part needs to be updated!  ***/
     favoriteArtist: "", /***OBS! this part needs to be updated!  ***/
   });
 
@@ -92,13 +94,13 @@ export const MultiStepForm = () => {
           break;
         
         case 4: /***OBS! this part needs to be updated!  ***/
-          if (formData.age.trim() !== "") setCurrentStep(currentStep + 1);
-          else alert("Please enter your age");
+          if (formData.timePreference.trim() !== "") setCurrentStep(currentStep + 1);
+          else alert("Please select what time of day suits you!");
           break;
         
         case 5: /***OBS! this part needs to be updated!  ***/
-          if (formData.favoriteAlbum.trim() !== "") setCurrentStep(currentStep + 1);
-          else alert("Please select your favorite album");
+          if (formData.favoriteMusic.trim() !== "") setCurrentStep(currentStep + 1);
+          else alert("Please select your favorite type pf music!");
           break;
         
         default:

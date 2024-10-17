@@ -1,6 +1,6 @@
 .header-welcome-form {
     height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
     background-color: #0018A4;
     color: white;
     text-align: center;

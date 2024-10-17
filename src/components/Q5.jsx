@@ -5,28 +5,27 @@
  * This file helps students understand how to manage dropdowns and controlled components using props in React.
  */
 
- import "./Questions.css"
 
- export const Album = ({ updateFormData, value }) => {
+ export const FavoriteMusic = ({ updateFormData, value }) => {
   // Function to handle the user's selection and update the form's favoriteAlbum field
-  const handleFavoriteAlbumChange = (e) => {
+  const handleFavoriteMusicChange = (e) => {
     // Call updateFormData to update the "favoriteAlbum" field with the selected value
-    updateFormData("favoriteAlbum", e.target.value);
+    updateFormData("favoriteMusic", e.target.value);
   };
 
   return (
     <div className="border-box-qa">
       {/* Label for the favorite album dropdown */}
-      <label className="qa-label flex-column">Favorite Album:</label>
+      <label className="qa-label flex-column">Favorite Type of Music:</label>
 
       {/* Dropdown to select the user's favorite album, controlled by the "value" prop */}
       {/* The onChange event triggers the handleFavoriteAlbumChange function to update the form data */}
-      <select className="center-content-qa flex-column" value={value} onChange={handleFavoriteAlbumChange}>
+      <select className="center-content-qa flex-column" value={value} onChange={handleFavoriteMusicChange}>
         <option value="">Select an Album</option>
-        <option value="taylor-swift-midnights">Taylor Swift - Midnights</option>
-        <option value="beyonce-renaissance">Beyonce - Renaissance</option>
-        <option value="kid-cudi-motm">Kid Cudi - Man On The Moon</option>
-        <option value="sza-sos">SZA - SOS</option>
+        <option value="pop">Pop</option>
+        <option value="rock">Rock</option>
+        <option value="classic">Classic</option>
+        <option value="indie">Indie</option>
       </select>
     </div>
   );

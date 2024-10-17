@@ -13,32 +13,57 @@
 
 export const TimePreference = ({ updateFormData, value }) => {
   // Function to handle user input and update the form's timepref. field
-  const handleTimeChange = (i) => {
+  const handleTimeChange = (e) => {
     // Call updateFormData to update the timepref. field with the input's current value
-    updateFormData("timePreference", i.target.value);
+    updateFormData("timePreference", e.target.value);
   };
 
   return (
     <div className="border-box-qa">
+      <div className="qa-label flex-column">
+        <p>4. </p>
+        <p>Are you a early bird or a night owl?</p>
+      </div>
+            
+      <div className="qa-input flex-row">
+      <form>
+        {/* Radio button for earlybird */}
+        <label htmlFor="earlybird">
+          <input
+          type="radio"
+          // name="petPreference"
+          id="earlybird"
+          value="early bird"
+          checked={value === "early bird"}
+          onChange={handleTimeChange}
+        />
+          Early bird
+        </label>
 
-      <p className="qa-label flex-column">
-        <div className="center-content-qa">
-          <p>2.</p>
+        <label htmlFor="nightowl">
+          <input
+          type="radio"
+          // name="petPreference"
+          id="nightowl"
+          value="night owl"
+          checked={value === "night owl"}
+          onChange={handleTimeChange}
+        />
+          Night owl
+        </label>
 
-          <label htmlFor="number">Age:</label>
-
-        </div>
-      </p>
-      
-      <p className="qa-input flex-column">
-        <div className="center-content-qa">
-
-          <input placeholder="Answer" type="number" value={value} onChange= {handleAgeChange} />
-          
-          <button className="button-qa">Next question</button>
-        </div>
-      </p>
-
+        <label htmlFor="none">
+          <input
+          type="radio"
+          id="none"
+          value="none"
+          checked={value === "none"}
+          onChange={handleTimeChange}
+        />
+          Neither
+        </label>
+      </form>
+      </div>         
     </div>
   );
 };
