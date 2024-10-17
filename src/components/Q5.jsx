@@ -15,13 +15,13 @@
   };
 
   return (
-    <div className="flex-container">
+    <div className="border-box-qa">
       {/* Label for the favorite album dropdown */}
-      <label className="qa-label">Favorite Album:</label>
+      <label className="qa-label flex-column">Favorite Album:</label>
 
       {/* Dropdown to select the user's favorite album, controlled by the "value" prop */}
       {/* The onChange event triggers the handleFavoriteAlbumChange function to update the form data */}
-      <select className="center-content-qa" value={value} onChange={handleFavoriteAlbumChange}>
+      <select className="center-content-qa flex-column" value={value} onChange={handleFavoriteAlbumChange}>
         <option value="">Select an Album</option>
         <option value="taylor-swift-midnights">Taylor Swift - Midnights</option>
         <option value="beyonce-renaissance">Beyonce - Renaissance</option>

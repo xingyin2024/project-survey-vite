@@ -20,9 +20,9 @@ export const Age = ({ updateFormData, value }) => {
   };
 
   return (
-    <div className="flex-container">
+    <div className="border-box-qa">
 
-      <p className="qa-label">
+      <p className="qa-label flex-column">
         <div className="center-content-qa">
           <p>2.</p>
 
@@ -31,7 +31,7 @@ export const Age = ({ updateFormData, value }) => {
         </div>
       </p>
       
-      <p className="qa-input">
+      <p className="qa-input flex-column">
         <div className="center-content-qa">
 
           <input placeholder="Answer" type="number" value={value} onChange= {handleAgeChange} />

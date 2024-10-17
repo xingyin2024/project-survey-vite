@@ -14,14 +14,15 @@ export const Personality = ({ updateFormData, value }) => {
 
   return (
     <div className="border-box-qa">
-      <div className="qa-label">
+      <div className="qa-label  flex-column">
         <p>3. </p>
         <p>Do you think you are more of an introverted or extroverted person?</p>
       </div>
       
-      <div className="qa-input">
-        <label htmlFor="personality">
-          Totally <b>Extrovert</b> 😁
+      <div className="qa-input flex-column">
+        <p>Current value: {value}</p>
+        <label className="flex-row" htmlFor="personality">
+          <p><b>Extrovert</b>😁</p>
           <input
             type="range"
             id="personality"
@@ -30,10 +31,8 @@ export const Personality = ({ updateFormData, value }) => {
             value={value}
             onChange={handlePersonalityChange}          
           />
-          Maybe <b>Introvert</b> 😉
+          <p><b>Introvert</b>😉</p>
         </label>
-        <br />
-        <p>Current value: {value}</p>
       </div>
     </div>
   );

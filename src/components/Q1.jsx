@@ -18,12 +18,12 @@ export const PetPreference = ({ updateFormData, value }) => {
 
   return (
     <div className="border-box-qa">
-      <div className="qa-label">
+      <div className="qa-label flex-column">
         <p>1. </p>
         <p>Are you a dog or a cat person?</p>
       </div>
             
-      <div className="qa-input">
+      <div className="qa-input flex-row">
       <form>
         {/* Radio button for Dog */}
           <label htmlFor="dog">

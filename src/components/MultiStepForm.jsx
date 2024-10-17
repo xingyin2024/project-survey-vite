@@ -150,8 +150,23 @@ export const MultiStepForm = () => {
 
   return (
     <div>
+      {/* Display the welcome page and the form data after submission */}
       {formSubmitted ? (
-        <h1>Thanks for taking the survey!</h1>
+        <div className="header-welcome-form">
+          <h2>Thank you for taking the survey and here is your answear!</h2>
+          <hr />
+          <p>You prefer {formData.petPreference}</p>
+          <p>You favorite season is {formData.seasonPreference}</p>
+          <p>And you think {getPersonalityType(formData.personality)}</p>
+          <p>How fun it is! Same like me 🌞 </p>
+          {/***OBS! this part below needs to be updated!  ***/}
+          <p>Age: {formData.age}</p>
+          <p>Favorite Album: {formData.favoriteAlbum}</p>
+          <p>Favorite Artist: {formData.favoriteArtist}</p>
+          <hr />
+          <h2>Hope you enjoy the survey ❤️❤️❤️</h2>
+          <button className="button-header" onClick={startOver}>Start Over</button>
+        </div>
       ) : (
         currentStep === 0 && <Welcome startForm={startForm} />
       )}
@@ -183,34 +198,15 @@ export const MultiStepForm = () => {
       {/* Navigation buttons for moving between steps */}
       {!formSubmitted && currentStep > 0 && (
         <div className="cta-box?">
-          {currentStep > 1 && <button className="button-qa" onClick={prevStep}>Previous</button>}
+          {currentStep > 1 && <button className="button-qa prev-step" onClick={prevStep}>Previous</button>}
           {currentStep < 6 ? (
-            <button className="button-qa" onClick={nextStep}>Next</button>
+            <button className="button-qa next-step" onClick={nextStep}>Next</button>
           ) : (
             <button className="button-qa" onClick={submitForm}>Submit Form</button>
           )}
         </div>
       )}
       
-      {/* Display the form data after submission */}
-      {formSubmitted && (
-        <div className="flex-container?">
-          <h2>Results</h2>
-          <hr />
-          <p>You prefer {formData.petPreference}</p>
-          <p>You favorite season is {formData.seasonPreference}</p>
-          <p>And you think {getPersonalityType(formData.personality)}</p>
-          <p>How fun it is! Same like me 🌞 </p>
-          {/***OBS! this part below needs to be updated!  ***/}
-          <p>Age: {formData.age}</p>
-          <p>Favorite Album: {formData.favoriteAlbum}</p>
-          <p>Favorite Artist: {formData.favoriteArtist}</p>
-          <hr />
-          <h2>Hope you enjoy the survey ❤️❤️❤️</h2>
-          <button className="button-qa" onClick={startOver}>Start Over</button>
-        </div>
-      )}
-
     </div>
 
   );

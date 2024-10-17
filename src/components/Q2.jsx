@@ -13,12 +13,12 @@ export const SeasonPreference = ({ updateFormData, value }) => {
 
   return (
     <div className="border-box-qa">
-      <div className="qa-label">
+      <div className="qa-label flex-column">
         <p>2. </p>
         <p>Which season do you like most?</p>
       </div>
       
-      <div className="qa-input">
+      <div className="qa-input flex-column">
         <label htmlFor="season"> Choose a season:</label>
         <select
           id="season"
