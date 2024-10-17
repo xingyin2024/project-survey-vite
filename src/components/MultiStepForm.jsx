@@ -183,7 +183,7 @@ export const MultiStepForm = () => {
       {/* Navigation buttons for moving between steps */}
       {!formSubmitted && currentStep > 0 && (
         <div className="cta-box?">
-          {currentStep > 1 && <button onClick={prevStep}>Previous</button>}
+          {currentStep > 1 && <button className="button-qa" onClick={prevStep}>Previous</button>}
           {currentStep < 6 ? (
             <button className="button-qa" onClick={nextStep}>Next</button>
           ) : (
