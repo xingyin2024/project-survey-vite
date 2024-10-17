@@ -15,11 +15,8 @@
 
   return (
     <div className="border-box-qa">
-      {/* Label for the favorite album dropdown */}
       <label className="qa-label flex-column">Favorite Type of Music:</label>
 
-      {/* Dropdown to select the user's favorite album, controlled by the "value" prop */}
-      {/* The onChange event triggers the handleFavoriteAlbumChange function to update the form data */}
       <select className="center-content-qa flex-column" value={value} onChange={handleFavoriteMusicChange}>
         <option value="">Select an Album</option>
         <option value="pop">Pop</option>

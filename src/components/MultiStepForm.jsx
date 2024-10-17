@@ -17,7 +17,7 @@ import { Welcome } from "./Welcome";
 import { PetPreference } from "./Q1";
 import { SeasonPreference } from "./Q2";
 import { Personality } from "./Q3";
-import { TimePreference } from "./Q4";
+import { TimePreference } from "./Q4new"
 import { FavoriteMusic } from "./Q5"; 
 import { Artist } from "./Q6"; /***OBS! this part needs to be updated!  ***/ 
 
