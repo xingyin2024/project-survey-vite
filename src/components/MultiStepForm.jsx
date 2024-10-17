@@ -124,9 +124,9 @@ export const MultiStepForm = () => {
     Pet: ${formData.petPreference}
     Season: ${formData.seasonPreference}
     Personality: ${formData.personality}
+    Time of day: ${formData.timePreference}
+    Favorite Music: ${formData.favoriteMusic}
     /***OBS! this part below needs to be updated!  ***/
-    Age: ${formData.age}
-    Favorite Album: ${formData.favoriteAlbum}
     Favorite Artist: ${formData.favoriteArtist}
     `;
 
@@ -139,8 +139,8 @@ export const MultiStepForm = () => {
       petPreference: "",
       seasonPreference: "",
       personality: 50,
-      age: "", /***OBS! this part needs to be updated!  ***/
-      favoriteAlbum: "", /***OBS! this part needs to be updated!  ***/
+      timePreference: "", /***OBS! this part needs to be updated!  ***/
+      favoriteMusic: "", /***OBS! this part needs to be updated!  ***/
       favoriteArtist: "", /***OBS! this part needs to be updated!  ***/
     });
     setFormSubmitted(false);
@@ -161,9 +161,9 @@ export const MultiStepForm = () => {
           <p>You favorite season is {formData.seasonPreference}</p>
           <p>And you think {getPersonalityType(formData.personality)}</p>
           <p>How fun it is! Same like me 🌞 </p>
+          <p>Time of day: {formData.timePreference}</p>
+          <p>Favorite Music: {formData.favoriteMusic}</p>
           {/***OBS! this part below needs to be updated!  ***/}
-          <p>Age: {formData.age}</p>
-          <p>Favorite Album: {formData.favoriteAlbum}</p>
           <p>Favorite Artist: {formData.favoriteArtist}</p>
           <hr />
           <h2>Hope you enjoy the survey ❤️❤️❤️</h2>
@@ -187,10 +187,10 @@ export const MultiStepForm = () => {
 
       {/***OBS! currentStep === 4-6 needs to be updated!  ***/}
       {currentStep === 4 && (
-        <Age value={formData.age} updateFormData={updateFormData} />
+        <TimePreference value={formData.timePreference} updateFormData={updateFormData} />
       )}
       {currentStep === 5 && (
-        <Album value={formData.favoriteAlbum} updateFormData={updateFormData} />
+        <FavoriteMusic value={formData.favoriteMusic} updateFormData={updateFormData} />
       )}
       {!formSubmitted && currentStep === 6 && (
         <Artist value={formData.favoriteArtist} updateFormData={updateFormData} />

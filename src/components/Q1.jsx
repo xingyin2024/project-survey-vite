@@ -24,7 +24,7 @@ export const PetPreference = ({ updateFormData, value }) => {
       </div>
             
       <div className="qa-input flex-row">
-      <form>
+      <form className="flex-column">
         {/* Radio button for Dog */}
         <label htmlFor="dog">
           <input

@@ -15,15 +15,26 @@
 
   return (
     <div className="border-box-qa">
-      <label className="qa-label flex-column">Favorite Type of Music:</label>
+      <div className="qa-label flex-column">
+        <p>5. </p>
+        <p>What's your favorite Type of Music?</p>
+      </div>
 
-      <select className="center-content-qa flex-column" value={value} onChange={handleFavoriteMusicChange}>
+      <div className="qa-input flex-column">
+      <label htmlFor="musictype"> Choose type of music:</label>
+      <select 
+      className="center-content-qa flex-column" 
+      id="musictype"
+      value={value} 
+      onChange={handleFavoriteMusicChange}
+      >
         <option value="">Select an Album</option>
         <option value="pop">Pop</option>
         <option value="rock">Rock</option>
         <option value="classic">Classic</option>
         <option value="indie">Indie</option>
       </select>
+      </div>
     </div>
   );
 };

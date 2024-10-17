@@ -17,18 +17,25 @@ export const Artist = ({ updateFormData, value }) => {
 
   return (
     <div className="border-box-qa">
-      {/* Label for the favorite artist dropdown */}
-      <label className="qa-label">Artist of the year:</label>
+      <div className="qa-label flex-column">
+        <p>6. </p>
+        <p>What's your favorite Type of Music?</p>
+      </div>
 
-      {/* Dropdown to select the user's favorite artist, controlled by the "value" prop */}
-      {/* The onChange event triggers the handleFavoriteArtistChange function to update the form data */}
-      <select className="center-content-qa" value={value} onChange={handleFavoriteArtistChange}>
-        <option>Select an Artist</option>
-        <option value="beyonce">Beyonce</option>
-        <option value="taylor-swift">Taylor Swift</option>
-        <option value="shakira">Shakira</option>
-        <option value="bad-bunny">Bad Bunny</option>
-      </select>
+      <div className="qa-input flex-column">
+        <label htmlFor="artist">Artist of the year:</label>
+        <select 
+        className="center-content-qa" 
+        id="artist" 
+        value={value} 
+        onChange={handleFavoriteArtistChange}>
+          <option>Select an Artist</option>
+          <option value="beyonce">Beyonce</option>
+          <option value="taylor-swift">Taylor Swift</option>
+          <option value="shakira">Shakira</option>
+          <option value="bad-bunny">Bad Bunny</option>
+        </select>
+      </div>
     </div>
   );
 };
