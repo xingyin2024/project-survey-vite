@@ -20,7 +20,7 @@ export const Age = ({ updateFormData, value }) => {
   };
 
   return (
-    <div className="border-box-qa">
+    <div className="flex-container">
 
       <p className="qa-label">
         <div className="center-content-qa">

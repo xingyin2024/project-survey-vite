@@ -15,7 +15,7 @@
   };
 
   return (
-    <div className="border-box-qa">
+    <div className="flex-container">
       {/* Label for the favorite album dropdown */}
       <label className="qa-label">Favorite Album:</label>
 

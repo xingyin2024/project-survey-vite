@@ -17,44 +17,49 @@ export const PetPreference = ({ updateFormData, value }) => {
   };
 
   return (
-    <div className="flex-container">
-      <h3>Are you a dog or a cat person?</h3>
-      
+    <div className="border-box-qa">
+      <div className="qa-label">
+        <p>1. </p>
+        <p>Are you a dog or a cat person?</p>
+      </div>
+            
+      <div className="qa-input">
       <form>
         {/* Radio button for Dog */}
-        <label htmlFor="dog">
-          <input
-          type="radio"
-          id="dog"
-          value="dog"
-          checked={value === "dog"}
-          onChange={handlePetChange}
-        />
-          Dog
-        </label>
+          <label htmlFor="dog">
+            <input
+            type="radio"
+            id="dog"
+            value="dog"
+            checked={value === "dog"}
+            onChange={handlePetChange}
+          />
+            Dog
+          </label>
 
-        <label htmlFor="cat">
-          <input
-          type="radio"
-          id="cat"
-          value="cat"
-          checked={value === "cat"}
-          onChange={handlePetChange}
-        />
-          Cat
-        </label>
+          <label htmlFor="cat">
+            <input
+            type="radio"
+            id="cat"
+            value="cat"
+            checked={value === "cat"}
+            onChange={handlePetChange}
+          />
+            Cat
+          </label>
 
-        <label htmlFor="none">
-          <input
-          type="radio"
-          id="none"
-          value="none"
-          checked={value === "none"}
-          onChange={handlePetChange}
-        />
-          Neither
-        </label>
-      </form>         
+          <label htmlFor="none">
+            <input
+            type="radio"
+            id="none"
+            value="none"
+            checked={value === "none"}
+            onChange={handlePetChange}
+          />
+            Neither
+          </label>
+        </form>
+      </div>  
     </div>
   );
 };

@@ -185,9 +185,9 @@ export const MultiStepForm = () => {
         <div className="cta-box?">
           {currentStep > 1 && <button onClick={prevStep}>Previous</button>}
           {currentStep < 6 ? (
-            <button onClick={nextStep}>Next</button>
+            <button className="button-qa" onClick={nextStep}>Next</button>
           ) : (
-            <button onClick={submitForm}>Submit Form</button>
+            <button className="button-qa" onClick={submitForm}>Submit Form</button>
           )}
         </div>
       )}
@@ -207,7 +207,7 @@ export const MultiStepForm = () => {
           <p>Favorite Artist: {formData.favoriteArtist}</p>
           <hr />
           <h2>Hope you enjoy the survey ❤️❤️❤️</h2>
-          <button onClick={startOver}>Start Over</button>
+          <button className="button-qa" onClick={startOver}>Start Over</button>
         </div>
       )}
 

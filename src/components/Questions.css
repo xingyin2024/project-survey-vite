@@ -1,6 +1,6 @@
 .border-box-qa {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     height: 100vh;
     padding: 1rem;
     overflow: hidden;
@@ -16,10 +16,13 @@
 .qa-label {
     background-color: #0018A4;
     color: #fff;
+        flex-direction: column;
 }
 .qa-input {
     background-color: white;
     color: #0018A4;
+        flex-direction: row;
+        gap: 200px;
 }
 .center-content-qa>input {
     border: 1px solid #000;
@@ -41,6 +44,9 @@
     font-weight: 600;
     border-radius: 6px;
     border: none;
+    position: relative;
+    bottom: 100px;
+    right: -1000px;
 }
 
 @media screen and (max-width:768px) {

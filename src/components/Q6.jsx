@@ -16,7 +16,7 @@ export const Artist = ({ updateFormData, value }) => {
   };
 
   return (
-    <div className="border-box-qa">
+    <div className="flex-container">
       {/* Label for the favorite artist dropdown */}
       <label className="qa-label">Artist of the year:</label>
 

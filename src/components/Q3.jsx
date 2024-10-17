@@ -13,10 +13,13 @@ export const Personality = ({ updateFormData, value }) => {
   };
 
   return (
-    <div className="flex-container">
-      <h3>Do you think you are more of an introverted or extroverted person?</h3>
+    <div className="border-box-qa">
+      <div className="qa-label">
+        <p>3. </p>
+        <p>Do you think you are more of an introverted or extroverted person?</p>
+      </div>
       
-      <div>
+      <div className="qa-input">
         <label htmlFor="personality">
           Extrovert
           <input
