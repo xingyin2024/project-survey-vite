@@ -26,7 +26,7 @@
         </div>
               
         <div className="qa-input flex-row">
-        <form>
+        <form className="flex-column">
           {/* Radio button for earlybird */}
           <label htmlFor="earlybird">
             <input

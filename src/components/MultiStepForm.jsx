@@ -163,7 +163,6 @@ export const MultiStepForm = () => {
           <p>How fun it is! Same like me 🌞 </p>
           <p>Time of day: {formData.timePreference}</p>
           <p>Favorite Music: {formData.favoriteMusic}</p>
-          {/***OBS! this part below needs to be updated!  ***/}
           <p>Favorite Artist: {formData.favoriteArtist}</p>
           <hr />
           <h2>Hope you enjoy the survey ❤️❤️❤️</h2>
