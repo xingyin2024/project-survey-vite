@@ -1,10 +1,5 @@
 /**
- * OBS! The content needs to be update! This is just an example from Diego's Technigo-useStateClass! 
- ** /
-
-/**
- * This component represents a multi-step form that collects user information such as name, age, email,
- * favorite band, album, and artist. It uses React's useState hook to manage form data and track the current step.
+ * This component represents a multi-step form that collects user information such as preference of pet & season, personality, favorite music & artist. It uses React's useState hook to manage form data and track the current step.
  * The form has validation for each step to ensure the user enters valid data before moving to the next step.
  * Once submitted, the form data is displayed, and the user can choose to reset the form and start over.
  * This component demonstrates step-by-step form handling with React state management.
@@ -17,9 +12,9 @@ import { Welcome } from "./Welcome";
 import { PetPreference } from "./Q1";
 import { SeasonPreference } from "./Q2";
 import { Personality } from "./Q3";
-import { TimePreference } from "./Q4new"
+import { TimePreference } from "./Q4"
 import { FavoriteMusic } from "./Q5"; 
-import { Artist } from "./Q6"; /***OBS! this part needs to be updated!  ***/ 
+import { Artist } from "./Q6"; 
 
 
 
@@ -33,8 +28,8 @@ export const MultiStepForm = () => {
     seasonPreference: "",
     personality: "",
     timePreference: "",
-    favoriteMusic: "", /***OBS! this part needs to be updated!  ***/
-    favoriteArtist: "", /***OBS! this part needs to be updated!  ***/
+    favoriteMusic: "", 
+    favoriteArtist: "", 
   });
 
   // State to track whether the form has been submitted
@@ -88,17 +83,17 @@ export const MultiStepForm = () => {
           else alert("Please select your favorite season");
           break;
         
-        case 3: /***OBS! this part needs to be updated!  ***/
+        case 3:
           if (formData.personality.trim() !== "") setCurrentStep(currentStep + 1);
           else alert("Please rate your personality between 1 to 100");
           break;
         
-        case 4: /***OBS! this part needs to be updated!  ***/
+        case 4:
           if (formData.timePreference.trim() !== "") setCurrentStep(currentStep + 1);
           else alert("Please select what time of day suits you!");
           break;
         
-        case 5: /***OBS! this part needs to be updated!  ***/
+        case 5:
           if (formData.favoriteMusic.trim() !== "") setCurrentStep(currentStep + 1);
           else alert("Please select your favorite type pf music!");
           break;
@@ -138,9 +133,9 @@ export const MultiStepForm = () => {
       petPreference: "",
       seasonPreference: "",
       personality: 50,
-      timePreference: "", /***OBS! this part needs to be updated!  ***/
-      favoriteMusic: "", /***OBS! this part needs to be updated!  ***/
-      favoriteArtist: "", /***OBS! this part needs to be updated!  ***/
+      timePreference: "", 
+      favoriteMusic: "", 
+      favoriteArtist: "", 
     });
     setFormSubmitted(false);
     setCurrentStep(0);
