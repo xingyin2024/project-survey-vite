@@ -28,7 +28,7 @@
         <div className="qa-input flex-row">
         <form className="flex-column">
           {/* Radio button for earlybird */}
-          <label htmlFor="earlybird">
+          <label  className="radio-label" htmlFor="earlybird">
             <input
             type="radio"
             // name="petPreference"
@@ -37,10 +37,10 @@
             checked={value === "early bird"}
             onChange={handleTimeChange}
           />
-            Early bird
+            <span>Early bird</span>
           </label>
   
-          <label htmlFor="nightowl">
+          <label  className="radio-label" htmlFor="nightowl">
             <input
             type="radio"
             // name="petPreference"
@@ -49,10 +49,10 @@
             checked={value === "night owl"}
             onChange={handleTimeChange}
           />
-            Night owl
+            <span>Night owl</span>
           </label>
   
-          <label htmlFor="none">
+          <label  className="radio-label" htmlFor="none">
             <input
             type="radio"
             id="none"
@@ -60,7 +60,7 @@
             checked={value === "none"}
             onChange={handleTimeChange}
           />
-            Neither
+            <span>Neither</span>
           </label>
         </form>
         </div>         

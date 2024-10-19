@@ -26,7 +26,7 @@ export const PetPreference = ({ updateFormData, value }) => {
       <div className="qa-input flex-row">
       <form className="flex-column">
         {/* Radio button for Dog */}
-        <label htmlFor="dog">
+        <label className="radio-label" htmlFor="dog">
           <input
           type="radio"
           id="dog"
@@ -34,10 +34,10 @@ export const PetPreference = ({ updateFormData, value }) => {
           checked={value === "dog"}
           onChange={handlePetChange}
         />
-          Dog
+          <span>Dog</span>
         </label>
 
-        <label htmlFor="cat">
+        <label  className="radio-label" htmlFor="cat">
           <input
           type="radio"
           id="cat"
@@ -45,10 +45,10 @@ export const PetPreference = ({ updateFormData, value }) => {
           checked={value === "cat"}
           onChange={handlePetChange}
         />
-          Cat
+          <span>Cat</span>
         </label>
 
-        <label htmlFor="none">
+        <label  className="radio-label" htmlFor="none">
           <input
           type="radio"
           id="none"
@@ -56,7 +56,7 @@ export const PetPreference = ({ updateFormData, value }) => {
           checked={value === "none"}
           onChange={handlePetChange}
         />
-          Neither
+          <span>Neither</span>
         </label>
       </form>
       </div>         

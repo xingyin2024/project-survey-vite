@@ -66,6 +66,7 @@
   }   
 }
 
+/* Range button style */
 .extro-intro-width {
   display: flex;
   flex-direction: column;
@@ -88,6 +89,31 @@ input[type="range"] {
   writing-mode: horizontal-tb;
   margin: 0 20px;
   }
+}
+
+/* Radio button style */
+.radio-label {
+    width: 260px;
+    border-radius: 6px;
+    border: 1px solid #9c9c9c;
+    margin-top: 10px;
+    font-weight: 400;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.1s ease, color 0.1s ease;
+    color: #000000;
+}
+
+input[type="radio"] {
+  display: none;  
+}
+
+.radio-label input[type="radio"]:checked+span {
+    font-weight: bold;
+    color: #0018A4;
+    display: block;
+    background-color: #ccd1ed;
 }
 
 .qa-input>select {
@@ -200,3 +226,4 @@ p {
   margin: 0;
   padding: 0;
 }
+
