@@ -1,8 +1,5 @@
 ## Netlify link
-Add your Netlify link here.
-PS. Don't forget to add it in your readme as well.
+https://survey-personality.netlify.app
 
 ## Collaborators
-Erika
-
-main >> dev >> xing + erika + styling + questionX etc...
+Xing Y. & Erika O.
