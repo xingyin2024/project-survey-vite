@@ -126,7 +126,6 @@ export const MultiStepForm = () => {
     Personality: ${formData.personality}
     Time of day: ${formData.timePreference}
     Favorite Music: ${formData.favoriteMusic}
-    /***OBS! this part below needs to be updated!  ***/
     Favorite Artist: ${formData.favoriteArtist}
     `;
 
@@ -198,7 +197,7 @@ export const MultiStepForm = () => {
 
       {/* Navigation buttons for moving between steps */}
       {!formSubmitted && currentStep > 0 && (
-        <div className="cta-box?">
+        <div className="cta-box">
           {currentStep > 1 && <button className="button-qa prev-step" onClick={prevStep}>Previous</button>}
           {currentStep < 6 ? (
             <button className="button-qa next-step" onClick={nextStep}>Next</button>

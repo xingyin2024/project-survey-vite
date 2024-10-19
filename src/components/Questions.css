@@ -1,8 +1,11 @@
+body {
+  margin: 0;
+}
+
 .border-box-qa {
   display: flex;
   flex-wrap: wrap;
   height: 100vh;
-  /* padding: 1rem; */
   overflow: hidden;
 }
 
@@ -37,8 +40,13 @@
   margin: 5px auto;
 }
 
+.qa-input .extro-intro-width {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .qa-input>select {
-  padding: 7px 5px;
+  padding: 10px 5px;
 }
 
 .flex-column {
@@ -72,20 +80,25 @@
 
 .button-qa {
   padding: 10px 20px;
-  margin: 20px 0;
+  margin: 10px 3px;
   background-color: #0018A4;
   color: #fff;
   font-weight: 600;
   border-radius: 6px;
   border: none;
-  position: relative;
-  bottom: 100px;
-  right: -1000px;
+  cursor: pointer;
+}
+.cta-box {
+  position: absolute;
+  bottom: 20%;
+  right: 13%;
 }
 
 .extro-intro-p-white {
   color: #fff;
 }
+
+
 
 @media screen and (max-width:768px) {
   .qa-label,
@@ -95,11 +108,30 @@
   .center-content-qa>input {
       width: 250px;
   }
-  .border-box-qa {
-    height: unset;
-  }
   .qa-label,
   .qa-input {
     min-height: 30vh;
   }
+  .button-qa {
+    width: 80%;
+    margin: 10px 0;
+    position: static;
+  }
+  .cta-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    position: unset;
+}
+  .qa-input>label,
+  .qa-input>select,
+  .qa-input>p {
+    width: 80%;
+    margin: 5px auto 20px;
+  }
+  /* .border-box-qa {
+    height: 50vh;
+  } */
 }
