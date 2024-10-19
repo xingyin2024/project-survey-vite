@@ -1,15 +1,19 @@
 .border-box-qa {
-  height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 100%;
+  min-height: 458px; /*iPhone 5/SE screen size*/
+
+  @media screen and (min-width: 768px) {
+  flex-direction: row;
+  min-height: 100vh;
+  }
 }
 
 .qa-label,
 .qa-input {
-  width:50%;
-  min-height: 90vh;
+  width:100%;
   justify-content: center;
   font-size: 1.4rem;
   font-weight: 600;
@@ -18,28 +22,72 @@
 .qa-label {
   background-color: #0018A4;
   color: #fff;
+  height: 220px;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+    min-height: 100vh;
+    margin: 0;
+  }
 }
 
 .qa-label>p {
-  width: 50%;
-  margin: 0 auto;
+  width: 80%;
+  margin: 10px auto;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }   
 }
 
 .qa-input {
   background-color: white;
   color: #0018A4;
+  margin-top: 40px;
+  height: 160px;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+    min-height: 100vh;
+    margin: 0;
+  }  
 }
 
 .qa-input>label,
 .qa-input>select,
 .qa-input>p {
-  width: 50%;
+  width: 90%;
   margin: 5px auto;
+
+  @media screen and (min-width: 768px) {
+    width: 80%;
+    margin: 15px 40px;
+  }   
 }
 
-.qa-input .extro-intro-width {
+.extro-intro-width {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+
+  @media screen and (min-width: 768px) {
+  flex-direction: row;
   width: 80%;
-  margin: 0 auto;
+  }
+}
+
+input[type="range"] {
+  writing-mode: vertical-lr;
+  direction: rtl;  
+  height: 100px;
+
+  @media screen and (min-width: 768px) {
+  writing-mode: horizontal-tb;
+  margin: 0 20px;
+  }
 }
 
 .qa-input>select {
@@ -75,16 +123,10 @@
   flex-direction: column;
 }
 
-hr {
-  border-bottom: 1px solid #fff;
-  width: 40%;
-  margin: 40px 0;
-}
-
 /* Basic button styles */
 .button-qa {
   padding: 10px 20px;
-  margin: 10px 3px;
+  margin: 5px 15px;
   color: #fff;
   text-align: center;
   font-size: 1rem;
@@ -113,49 +155,48 @@ hr {
 }
 
 .cta-box {
-  position: absolute;
-  bottom: 20%;
-  right: 13%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 10px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    width: auto;
+    position: absolute;
+    bottom: 20%;
+    right: 15%;
+    padding-bottom: 20px;
+  }
 }
 
-.extro-intro-p-white {
-  color: #fff;
+
+.result-form {
+  height: 100vh;
+  text-align: center;
+  color: white;
+  background-color: #0018A4;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: auto;
 }
 
-
-
-@media screen and (max-width:768px) {
-  .qa-label,
-  .qa-input {
-      width:100%;
-  }
-  .center-content-qa>input {
-      width: 250px;
-  }
-  .qa-label,
-  .qa-input {
-    min-height: 30vh;
-  }
-  .button-qa {
-    width: 80%;
-    margin: 10px 0;
-    position: static;
-  }
-  .cta-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    position: unset;
+hr {
+  border-bottom: 1px solid #fff;
+  width: 40%;
+  margin: 30px 0;
 }
-  .qa-input>label,
-  .qa-input>select,
-  .qa-input>p {
-    width: 80%;
-    margin: 5px auto 20px;
-  }
-  /* .border-box-qa {
-    height: 50vh;
-  } */
+
+h2, h3 {
+  margin: 0;
+  padding: 0 10px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }

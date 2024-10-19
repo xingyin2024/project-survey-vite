@@ -12,25 +12,4 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-h2, h3 {
-  margin: 0;
-}
-
-p {
-  margin: 0;
-  padding: 0;
-}
-
-hr {
-  border-bottom: 1px solid #fff;
-  width: 40%;
-  margin: 40px 0;
 }

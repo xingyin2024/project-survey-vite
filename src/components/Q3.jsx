@@ -20,8 +20,7 @@ export const Personality = ({ updateFormData, value }) => {
       </div>
       
       <div className="qa-input flex-column">
-        <p className="extro-intro-p-white">Current value: {value}</p>
-        <label className="flex-row extro-intro-width" htmlFor="personality">
+        <label className="extro-intro-width" htmlFor="personality">
           <p><b>Extrovert</b>😁</p>
           <input
             type="range"

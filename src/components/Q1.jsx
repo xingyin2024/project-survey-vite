@@ -29,7 +29,6 @@ export const PetPreference = ({ updateFormData, value }) => {
         <label htmlFor="dog">
           <input
           type="radio"
-          // name="petPreference"
           id="dog"
           value="dog"
           checked={value === "dog"}
@@ -41,7 +40,6 @@ export const PetPreference = ({ updateFormData, value }) => {
         <label htmlFor="cat">
           <input
           type="radio"
-          // name="petPreference"
           id="cat"
           value="cat"
           checked={value === "cat"}
@@ -53,7 +51,6 @@ export const PetPreference = ({ updateFormData, value }) => {
         <label htmlFor="none">
           <input
           type="radio"
-          // name="petPreference"
           id="none"
           value="none"
           checked={value === "none"}

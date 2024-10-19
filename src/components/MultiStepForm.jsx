@@ -148,7 +148,7 @@ export const MultiStepForm = () => {
     <div>
       {/* Display the welcome page and the form data after submission */}
       {formSubmitted ? (
-        <div className="header-welcome-form">
+        <div className="result-form">
           <h2>Thank you for taking the survey and here is your answear!</h2>
           <hr />
           <p>You prefer {formData.petPreference}</p>
@@ -159,7 +159,8 @@ export const MultiStepForm = () => {
           <p>Favorite Music: {formData.favoriteMusic}</p>
           <p>Favorite Artist: {formData.favoriteArtist}</p>
           <hr />
-          <h2>Hope you enjoy the survey ❤️❤️❤️</h2>
+          <h3>Hope you enjoy the survey</h3>
+          <p>❤️❤️❤️</p>
           <button className="button-header" onClick={startOver}>Start Over</button>
         </div>
       ) : (
