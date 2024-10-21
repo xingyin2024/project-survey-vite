@@ -1,12 +1,4 @@
-/**
- * This component is used to collect and update the user's favorite album in a multi-step form.
- * It demonstrates how to handle select dropdowns in React using the useState hook indirectly (from a parent component).
- * The Album component receives the current favorite album value and an update function as props, and updates the form data when the user selects an album.
- * This file helps students understand how to manage dropdowns and controlled components using props in React.
- */
-
-
- export const FavoriteMusic = ({ updateFormData, value }) => {
+export const FavoriteMusic = ({ updateFormData, value }) => {
   // Function to handle the user's selection and update the form's favoriteAlbum field
   const handleFavoriteMusicChange = (e) => {
     // Call updateFormData to update the "favoriteAlbum" field with the selected value

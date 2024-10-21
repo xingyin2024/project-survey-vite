@@ -132,7 +132,7 @@ export const MultiStepForm = () => {
     setFormData({
       petPreference: "",
       seasonPreference: "",
-      personality: 50,
+      personality: "",
       timePreference: "", 
       favoriteMusic: "", 
       favoriteArtist: "", 
@@ -179,16 +179,16 @@ export const MultiStepForm = () => {
         <Personality value={formData.personality} updateFormData={updateFormData} />
       )}
 
-      {/***OBS! currentStep === 4-6 needs to be updated!  ***/}
       {currentStep === 4 && (
         <TimePreference value={formData.timePreference} updateFormData={updateFormData} />
       )}
+
       {currentStep === 5 && (
         <FavoriteMusic value={formData.favoriteMusic} updateFormData={updateFormData} />
       )}
+
       {!formSubmitted && currentStep === 6 && (
         <Artist value={formData.favoriteArtist} updateFormData={updateFormData} />
-        // {/***OBS! currentStep === 4-6 needs to be updated!  ***/}
       )}
 
       {/* Navigation buttons for moving between steps */}

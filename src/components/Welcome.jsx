@@ -1,10 +1,5 @@
 import "./Welcome.css"
 
-/**
- * OBS! The content needs to be update! 
- **/
-
-
 export const Welcome = ({ startForm }) => {
   console.log("Welcome ok")
 
