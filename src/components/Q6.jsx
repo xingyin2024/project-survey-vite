@@ -19,7 +19,7 @@ export const Artist = ({ updateFormData, value }) => {
         id="artist" 
         value={value} 
         onChange={handleFavoriteArtistChange}>
-          <option>Select an Artist</option>
+          <option value="">Select an Artist</option>
           <option value="beyonce">Beyonce</option>
           <option value="taylor-swift">Taylor Swift</option>
           <option value="shakira">Shakira</option>

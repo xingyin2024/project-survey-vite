@@ -1,8 +1,6 @@
 import "./Welcome.css"
 
 export const Welcome = ({ startForm }) => {
-  console.log("Welcome ok")
-
   return (
     <>
       <header className="header-welcome-form">

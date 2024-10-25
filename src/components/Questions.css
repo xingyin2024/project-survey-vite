@@ -157,7 +157,7 @@ input[type="radio"] {
   text-align: center;
   font-size: 1rem;
   font-weight: 600;
-  border-radius: 6px;
+  border-radius: 6px 18px;
   border: solid 1px black;
   cursor: pointer;
   display: inline-block;
@@ -166,13 +166,15 @@ input[type="radio"] {
 }
 
 /* Default button style */
-.button-qa {
+.disabled-btn {
   background-color: #c2c2c2;
+  cursor: not-allowed;
 }
 
 /* Active button style */
-.button-qa:active {
+.next-step, .prev-step, .submit-btn {
   background-color: #0018A4;
+  cursor: pointer;
 }
 
 /* Hover state for better UX */
@@ -193,6 +195,18 @@ input[type="radio"] {
     bottom: 20%;
     right: 15%;
     padding-bottom: 20px;
+  }
+}
+
+.validation-message {
+  text-align: center;
+  color: red;
+  font-size: 1rem;
+
+  @media screen and (min-width: 768px) {
+  position: absolute;
+  bottom: 18%;
+  right: 15%;
   }
 }
 

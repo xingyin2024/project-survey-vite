@@ -20,8 +20,6 @@ import { Artist } from "./Q6";
 
 // Component: MultiStepForm
 export const MultiStepForm = () => {
-  console.log("MultiStepForm ok")
-
   // State to store form data for each field (petPreference, seasonPreference, personality,...)
   const [formData, setFormData] = useState({
     petPreference: "",
@@ -39,11 +37,13 @@ export const MultiStepForm = () => {
   const [currentStep, setCurrentStep] = useState(0);
   
   // ---
+  const [validationMessage, setValidationMessage] = useState("");
   // ---
 
   // Function to update form data based on the provided field (key) and value
   const updateFormData = (field, value) => {
     setFormData((previous) => ({ ...previous, [field]: value }));
+    setValidationMessage("");
   };
   
   // Function to move to the first step in the form
@@ -69,40 +69,32 @@ export const MultiStepForm = () => {
     }
   }
 
-  // Function to move to the next step in the form, with validation at each step
-  const nextStep = () => {
-    if (currentStep < 6) {
-      switch (currentStep) {
-        case 1:
-          if (formData.petPreference.trim() !== "") setCurrentStep(currentStep + 1);
-          else alert("Please select dog or cat or none");
-          break;
-        
-        case 2:
-          if (formData.seasonPreference.trim() !== "") setCurrentStep(currentStep + 1);
-          else alert("Please select your favorite season");
-          break;
-        
-        case 3:
-          if (formData.personality.trim() !== "") setCurrentStep(currentStep + 1);
-          else alert("Please rate your personality between 1 to 100");
-          break;
-        
-        case 4:
-          if (formData.timePreference.trim() !== "") setCurrentStep(currentStep + 1);
-          else alert("Please select what time of day suits you!");
-          break;
-        
-        case 5:
-          if (formData.favoriteMusic.trim() !== "") setCurrentStep(currentStep + 1);
-          else alert("Please select your favorite type pf music!");
-          break;
-        
-        default:
-          setCurrentStep(currentStep + 1);
-      }
+  // Function to combine validation and checks current step and provides feedback if invalid
+  const validateStep = () => {
+    switch (currentStep) {
+      case 1:
+        return formData.petPreference.trim() === "" ? "Please select dog or cat or none!" : null;
+      case 2:
+        return formData.seasonPreference.trim() === "" ? "Please select your favorite season!" : null;
+      case 3:
+        return formData.personality.trim() === "" ? "Please rate your personality!" : null;
+      case 4:
+        return formData.timePreference.trim() === "" ? "Please select what time of day suits you!" : null;
+      case 5:
+        return formData.favoriteMusic.trim() === "" ? "Please select your favorite type of music!" : null;
+      case 6:
+        return formData.favoriteArtist.trim() === "" ? "Please select your favorite artist!" : null;      
+      default:
+        return null;
     }
   };
+  
+  // Function to move to the next step in the form
+  const nextStep = () => { 
+    const validationMessage = validateStep();
+
+    !validationMessage ? setCurrentStep(currentStep + 1) : setValidationMessage(validationMessage);
+   }
 
   // Function to move back to the previous step in the form
   const prevStep = () => {
@@ -111,8 +103,6 @@ export const MultiStepForm = () => {
 
   // Function to submit the form, log the form data, and display it
   const submitForm = () => {
-    console.log(formData)
-
     setFormSubmitted(true);
 
     const formattedData = `
@@ -139,6 +129,7 @@ export const MultiStepForm = () => {
     });
     setFormSubmitted(false);
     setCurrentStep(0);
+    setValidationMessage("");
   };
 
   // ---
@@ -195,14 +186,29 @@ export const MultiStepForm = () => {
       {!formSubmitted && currentStep > 0 && (
         <div className="cta-box">
           {currentStep > 1 && <button className="button-qa prev-step" onClick={prevStep}>Previous</button>}
+
           {currentStep < 6 ? (
-            <button className="button-qa next-step" onClick={nextStep}>Next</button>
+            <button
+              className={`button-qa ${validateStep() ? "disabled-btn" : "next-step"}`} onClick={nextStep}
+              disabled={!!validationMessage}
+            >
+              Next
+            </button>
           ) : (
-            <button className="button-qa" onClick={submitForm}>Submit Form</button>
+            <button
+              className={`button-qa ${validateStep() ? "disabled-btn" : "submit-btn"}`}
+              onClick={submitForm}
+              disabled={!!validationMessage}
+            >
+              Submit Form
+            </button>
           )}
+          
+          
         </div>
+    
       )}
-      
+      {validationMessage && <p className="validation-message">{validationMessage}</p>}
     </div>
 
   );
